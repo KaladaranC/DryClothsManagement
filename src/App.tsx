@@ -345,29 +345,29 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f6f7fb] text-zinc-950">
+    <main className="min-h-screen bg-[#f6f7fb] text-zinc-950 dark:bg-[#0f111a] dark:text-zinc-50 transition-colors duration-200">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8">
-        <header className="flex flex-col gap-4 border-b border-zinc-200 pb-5 lg:flex-row lg:items-center lg:justify-between">
+        <header className="flex flex-col gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex min-w-0 items-center gap-3">
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-cyan-600 text-white shadow-sm">
               <Wind className="h-7 w-7" aria-hidden="true" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700 dark:text-cyan-400">
                 DryCloths
               </p>
-              <h1 className="truncate text-2xl font-bold text-zinc-950 sm:text-3xl">
+              <h1 className="truncate text-2xl font-bold text-zinc-950 dark:text-white sm:text-3xl">
                 Laundry Drying Manager
               </h1>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-medium text-zinc-700 shadow-sm">
+            <span className="inline-flex items-center gap-2 rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 shadow-sm">
               {isOnline ? (
-                <Wifi className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                <Wifi className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
               ) : (
-                <WifiOff className="h-4 w-4 text-rose-600" aria-hidden="true" />
+                <WifiOff className="h-4 w-4 text-rose-600 dark:text-rose-400" aria-hidden="true" />
               )}
               {isOnline ? 'Online' : 'Offline'}
             </span>
@@ -376,7 +376,7 @@ function App() {
               <button
                 type="button"
                 onClick={handleInstall}
-                className="inline-flex items-center gap-2 rounded-md bg-zinc-950 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800"
+                className="inline-flex items-center gap-2 rounded-md bg-zinc-950 dark:bg-zinc-100 px-4 py-2 text-sm font-semibold text-white dark:text-zinc-950 shadow-sm transition hover:bg-zinc-800 dark:hover:bg-zinc-200"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
                 Install
@@ -386,21 +386,21 @@ function App() {
         </header>
 
         <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
-            <p className="text-sm font-medium text-zinc-500">Pieces drying</p>
-            <p className="mt-2 text-3xl font-bold text-zinc-950">{stats.totalPieces}</p>
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-sm">
+            <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Pieces drying</p>
+            <p className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.totalPieces}</p>
           </div>
-          <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
-            <p className="text-sm font-medium text-zinc-500">Active batches</p>
-            <p className="mt-2 text-3xl font-bold text-zinc-950">{stats.totalBatches}</p>
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-sm">
+            <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Active batches</p>
+            <p className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.totalBatches}</p>
           </div>
-          <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
-            <p className="text-sm font-medium text-zinc-500">Ready now</p>
-            <p className="mt-2 text-3xl font-bold text-emerald-700">{stats.readyBatches}</p>
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-sm">
+            <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Ready now</p>
+            <p className="mt-2 text-3xl font-bold text-emerald-700 dark:text-emerald-400">{stats.readyBatches}</p>
           </div>
-          <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
-            <p className="text-sm font-medium text-zinc-500">Next ready</p>
-            <p className="mt-2 text-3xl font-bold text-amber-700">
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-sm">
+            <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Next ready</p>
+            <p className="mt-2 text-3xl font-bold text-amber-700 dark:text-amber-400">
               {stats.nextReadyAt ? formatClock(stats.nextReadyAt) : 'Done'}
             </p>
           </div>
@@ -408,10 +408,10 @@ function App() {
 
         <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
           <aside className="space-y-6">
-            <section className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm">
+            <section className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 shadow-sm">
               <div className="mb-4 flex items-center justify-between gap-3">
-                <h2 className="text-lg font-bold text-zinc-950">Quick Add</h2>
-                <Shirt className="h-5 w-5 text-cyan-700" aria-hidden="true" />
+                <h2 className="text-lg font-bold text-zinc-950 dark:text-zinc-50">Quick Add</h2>
+                <Shirt className="h-5 w-5 text-cyan-700 dark:text-cyan-400" aria-hidden="true" />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
@@ -420,10 +420,10 @@ function App() {
                     key={preset.name}
                     type="button"
                     onClick={() => addItem(preset.name, preset.category, preset.targetMinutes)}
-                    className="flex min-h-16 flex-col items-start justify-between rounded-md border border-zinc-200 bg-zinc-50 p-3 text-left transition hover:border-cyan-300 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="flex min-h-16 flex-col items-start justify-between rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 p-3 text-left transition hover:border-cyan-300 dark:hover:border-cyan-800 hover:bg-cyan-50 dark:hover:bg-cyan-950/20 focus:outline-none focus:ring-2 focus:ring-cyan-500"
                   >
-                    <span className="text-sm font-semibold text-zinc-950">{preset.name}</span>
-                    <span className="text-xs font-medium text-zinc-500">
+                    <span className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{preset.name}</span>
+                    <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
                       {formatDuration(preset.targetMinutes)}
                     </span>
                   </button>
@@ -431,12 +431,12 @@ function App() {
               </div>
             </section>
 
-            <section className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm">
-              <h2 className="mb-4 text-lg font-bold text-zinc-950">Custom Batch</h2>
+            <section className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 shadow-sm">
+              <h2 className="mb-4 text-lg font-bold text-zinc-950 dark:text-zinc-50">Custom Batch</h2>
 
               <div className="space-y-4">
                 <label className="block">
-                  <span className="mb-1 block text-sm font-medium text-zinc-700">Name</span>
+                  <span className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Name</span>
                   <input
                     type="text"
                     value={customName}
@@ -447,25 +447,25 @@ function App() {
                       }
                     }}
                     placeholder="Hoodies"
-                    className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-950 shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-md border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-950 dark:text-zinc-50 shadow-sm outline-none transition placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 dark:focus:ring-cyan-950/30"
                   />
                 </label>
 
                 <div className="grid grid-cols-2 gap-3">
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-zinc-700">Quantity</span>
+                    <span className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Quantity</span>
                     <input
                       type="number"
                       min="1"
                       max="99"
                       value={customQuantity}
                       onChange={(event) => setCustomQuantity(event.target.value)}
-                      className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-950 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                      className="w-full rounded-md border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-950 dark:text-zinc-50 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 dark:focus:ring-cyan-950/30"
                     />
                   </label>
 
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-zinc-700">Hours</span>
+                    <span className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Hours</span>
                     <input
                       type="number"
                       min="0.25"
@@ -473,17 +473,17 @@ function App() {
                       step="0.25"
                       value={customTargetHours}
                       onChange={(event) => setCustomTargetHours(event.target.value)}
-                      className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-950 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                      className="w-full rounded-md border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-950 dark:text-zinc-50 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 dark:focus:ring-cyan-950/30"
                     />
                   </label>
                 </div>
 
                 <label className="block">
-                  <span className="mb-1 block text-sm font-medium text-zinc-700">Category</span>
+                  <span className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Category</span>
                   <select
                     value={customCategory}
                     onChange={(event) => setCustomCategory(event.target.value)}
-                    className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-950 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-md border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-950 dark:text-zinc-50 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 dark:focus:ring-cyan-950/30"
                   >
                     {CATEGORY_OPTIONS.map(category => (
                       <option key={category} value={category}>{category}</option>
@@ -492,11 +492,11 @@ function App() {
                 </label>
 
                 <label className="block">
-                  <span className="mb-1 block text-sm font-medium text-zinc-700">Location</span>
+                  <span className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Location</span>
                   <select
                     value={customLocation}
                     onChange={(event) => setCustomLocation(event.target.value)}
-                    className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-950 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-md border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-950 dark:text-zinc-50 shadow-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 dark:focus:ring-cyan-950/30"
                   >
                     {LOCATION_OPTIONS.map(location => (
                       <option key={location} value={location}>{location}</option>
@@ -507,7 +507,7 @@ function App() {
                 <button
                   type="button"
                   onClick={handleAddCustom}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-cyan-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-cyan-700 dark:bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-800 dark:hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                 >
                   <Plus className="h-4 w-4" aria-hidden="true" />
                   Add Batch
@@ -516,28 +516,28 @@ function App() {
             </section>
           </aside>
 
-          <section className="min-w-0 rounded-lg border border-zinc-200 bg-white shadow-sm">
-            <div className="flex flex-col gap-4 border-b border-zinc-200 p-5 xl:flex-row xl:items-center xl:justify-between">
+          <section className="min-w-0 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm">
+            <div className="flex flex-col gap-4 border-b border-zinc-200 dark:border-zinc-800 p-5 xl:flex-row xl:items-center xl:justify-between">
               <div>
-                <h2 className="text-lg font-bold text-zinc-950">Drying Board</h2>
-                <p className="mt-1 text-sm text-zinc-500">
+                <h2 className="text-lg font-bold text-zinc-950 dark:text-zinc-50">Drying Board</h2>
+                <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                   {stats.dryingBatches} drying, {stats.readyBatches} ready
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <label className="relative block min-w-0 sm:w-64">
-                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" aria-hidden="true" />
+                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400 dark:text-zinc-500" aria-hidden="true" />
                   <input
                     type="search"
                     value={searchQuery}
                     onChange={(event) => setSearchQuery(event.target.value)}
                     placeholder="Search"
-                    className="w-full rounded-md border border-zinc-300 bg-white py-2 pl-9 pr-3 text-sm text-zinc-950 shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-md border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-2 pl-9 pr-3 text-sm text-zinc-950 dark:text-zinc-50 shadow-sm outline-none transition placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 dark:focus:ring-cyan-950/30"
                   />
                 </label>
 
-                <div className="inline-flex rounded-md border border-zinc-200 bg-zinc-50 p-1">
+                <div className="inline-flex rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 p-1">
                   {(['all', 'drying', 'ready'] as FilterMode[]).map(mode => (
                     <button
                       key={mode}
@@ -545,8 +545,8 @@ function App() {
                       onClick={() => setFilterMode(mode)}
                       className={`inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-sm font-semibold capitalize transition ${
                         filterMode === mode
-                          ? 'bg-white text-cyan-800 shadow-sm'
-                          : 'text-zinc-500 hover:text-zinc-900'
+                          ? 'bg-white dark:bg-zinc-900 text-cyan-800 dark:text-cyan-400 shadow-sm'
+                          : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
                       }`}
                     >
                       {mode === 'all' && <Filter className="h-3.5 w-3.5" aria-hidden="true" />}
@@ -560,8 +560,8 @@ function App() {
             </div>
 
             {items.length > 0 && (
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-200 bg-zinc-50 px-5 py-3">
-                <div className="text-sm font-medium text-zinc-600">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/40 px-5 py-3">
+                <div className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                   {filteredItems.length} shown
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -569,7 +569,7 @@ function App() {
                     type="button"
                     onClick={removeReadyItems}
                     disabled={stats.readyBatches === 0}
-                    className="inline-flex items-center gap-2 rounded-md border border-emerald-200 bg-white px-3 py-2 text-sm font-semibold text-emerald-700 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex items-center gap-2 rounded-md border border-emerald-200 dark:border-emerald-950 bg-white dark:bg-zinc-900 px-3 py-2 text-sm font-semibold text-emerald-700 dark:text-emerald-400 shadow-sm transition hover:border-emerald-300 dark:hover:border-emerald-900 hover:bg-emerald-50 dark:hover:bg-emerald-950/20 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <Check className="h-4 w-4" aria-hidden="true" />
                     Take Ready
@@ -577,7 +577,7 @@ function App() {
                   <button
                     type="button"
                     onClick={removeAll}
-                    className="inline-flex items-center gap-2 rounded-md border border-rose-200 bg-white px-3 py-2 text-sm font-semibold text-rose-700 shadow-sm transition hover:border-rose-300 hover:bg-rose-50"
+                    className="inline-flex items-center gap-2 rounded-md border border-rose-200 dark:border-rose-950 bg-white dark:bg-zinc-900 px-3 py-2 text-sm font-semibold text-rose-700 dark:text-rose-400 shadow-sm transition hover:border-rose-300 dark:hover:border-rose-900 hover:bg-rose-50 dark:hover:bg-rose-950/20"
                   >
                     <Trash2 className="h-4 w-4" aria-hidden="true" />
                     Clear
@@ -598,39 +598,39 @@ function App() {
                     return (
                       <article
                         key={item.id}
-                        className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
+                        className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-sm"
                       >
                         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                           <div className="min-w-0 flex-1">
                             <div className="flex flex-wrap items-center gap-2">
-                              <h3 className="min-w-0 truncate text-lg font-bold text-zinc-950">
+                              <h3 className="min-w-0 truncate text-lg font-bold text-zinc-950 dark:text-zinc-50">
                                 {item.name}
                               </h3>
                               <span className={`rounded px-2 py-1 text-xs font-bold ${
                                 ready
-                                  ? 'bg-emerald-100 text-emerald-700'
-                                  : 'bg-amber-100 text-amber-800'
+                                  ? 'bg-emerald-100 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400'
+                                  : 'bg-amber-100 dark:bg-amber-950/30 text-amber-800 dark:text-amber-400'
                               }`}
                               >
                                 {ready ? 'Ready' : formatDuration(remainingMinutes)}
                               </span>
-                              <span className="rounded bg-zinc-100 px-2 py-1 text-xs font-semibold text-zinc-600">
+                              <span className="rounded bg-zinc-100 dark:bg-zinc-950 px-2 py-1 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
                                 {item.category}
                               </span>
                             </div>
 
-                            <div className="mt-3 grid gap-2 text-sm text-zinc-600 sm:grid-cols-2">
+                            <div className="mt-3 grid gap-2 text-sm text-zinc-600 dark:text-zinc-400 sm:grid-cols-2">
                               <span className="inline-flex items-center gap-2">
-                                <MapPin className="h-4 w-4 text-zinc-400" aria-hidden="true" />
+                                <MapPin className="h-4 w-4 text-zinc-400 dark:text-zinc-500" aria-hidden="true" />
                                 {item.location}
                               </span>
                               <span className="inline-flex items-center gap-2">
-                                <Clock className="h-4 w-4 text-zinc-400" aria-hidden="true" />
+                                <Clock className="h-4 w-4 text-zinc-400 dark:text-zinc-500" aria-hidden="true" />
                                 Ready at {formatClock(readyAt)}
                               </span>
                             </div>
 
-                            <div className="mt-4 h-2 overflow-hidden rounded-full bg-zinc-100">
+                            <div className="mt-4 h-2 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-950">
                               <div
                                 className={`h-full rounded-full transition-all ${
                                   ready ? 'bg-emerald-500' : 'bg-cyan-600'
@@ -641,23 +641,37 @@ function App() {
                           </div>
 
                           <div className="flex shrink-0 flex-wrap items-center gap-2 md:justify-end">
-                            <div className="inline-flex h-10 items-center rounded-md border border-zinc-200 bg-zinc-50">
+                            <button
+                              type="button"
+                              onClick={() => removeItem(item.id)}
+                              className={`grid h-10 w-10 place-items-center rounded-md border transition ${
+                                ready
+                                  ? 'border-emerald-600 bg-emerald-600 text-white shadow-sm hover:bg-emerald-700'
+                                  : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 shadow-sm hover:bg-zinc-50 dark:hover:bg-zinc-950 hover:text-zinc-950 dark:hover:text-zinc-100'
+                              }`}
+                              aria-label={`Mark ${item.name} as taken`}
+                              title="Mark as taken"
+                            >
+                              <Check className="h-4 w-4" aria-hidden="true" />
+                            </button>
+
+                            <div className="inline-flex h-10 items-center rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950">
                               <button
                                 type="button"
                                 onClick={() => updateQuantity(item.id, -1)}
-                                className="grid h-10 w-10 place-items-center rounded-l-md text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950"
+                                className="grid h-10 w-10 place-items-center rounded-l-md text-zinc-600 dark:text-zinc-400 transition hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-950 dark:hover:text-zinc-100"
                                 aria-label={`Decrease ${item.name}`}
                                 title="Decrease"
                               >
                                 <Minus className="h-4 w-4" aria-hidden="true" />
                               </button>
-                              <span className="grid h-10 min-w-12 place-items-center border-x border-zinc-200 px-3 text-sm font-bold text-zinc-950">
+                              <span className="grid h-10 min-w-12 place-items-center border-x border-zinc-200 dark:border-zinc-800 px-3 text-sm font-bold text-zinc-950 dark:text-zinc-50">
                                 {item.quantity}
                               </span>
                               <button
                                 type="button"
                                 onClick={() => updateQuantity(item.id, 1)}
-                                className="grid h-10 w-10 place-items-center rounded-r-md text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950"
+                                className="grid h-10 w-10 place-items-center rounded-r-md text-zinc-600 dark:text-zinc-400 transition hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-950 dark:hover:text-zinc-100"
                                 aria-label={`Increase ${item.name}`}
                                 title="Increase"
                               >
@@ -668,7 +682,7 @@ function App() {
                             <button
                               type="button"
                               onClick={() => restartTimer(item.id)}
-                              className="grid h-10 w-10 place-items-center rounded-md border border-zinc-200 bg-white text-zinc-600 shadow-sm transition hover:bg-zinc-50 hover:text-zinc-950"
+                              className="grid h-10 w-10 place-items-center rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 shadow-sm transition hover:bg-zinc-50 dark:hover:bg-zinc-950 hover:text-zinc-950 dark:hover:text-zinc-100"
                               aria-label={`Restart timer for ${item.name}`}
                               title="Restart timer"
                             >
@@ -678,7 +692,7 @@ function App() {
                             <button
                               type="button"
                               onClick={() => removeItem(item.id)}
-                              className="grid h-10 w-10 place-items-center rounded-md border border-rose-200 bg-white text-rose-700 shadow-sm transition hover:bg-rose-50"
+                              className="grid h-10 w-10 place-items-center rounded-md border border-rose-200 dark:border-rose-950 bg-white dark:bg-zinc-900 text-rose-700 dark:text-rose-400 shadow-sm transition hover:border-rose-300 dark:hover:border-rose-900 hover:bg-rose-50 dark:hover:bg-rose-950/20"
                               aria-label={`Take down ${item.name}`}
                               title="Take down"
                             >
@@ -691,13 +705,13 @@ function App() {
                   })}
                 </div>
               ) : (
-                <div className="grid min-h-72 place-items-center rounded-lg border border-dashed border-zinc-300 bg-zinc-50 p-8 text-center">
+                <div className="grid min-h-72 place-items-center rounded-lg border border-dashed border-zinc-300 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/50 p-8 text-center">
                   <div>
-                    <Wind className="mx-auto h-12 w-12 text-zinc-300" aria-hidden="true" />
-                    <p className="mt-4 text-lg font-bold text-zinc-950">
+                    <Wind className="mx-auto h-12 w-12 text-zinc-300 dark:text-zinc-700" aria-hidden="true" />
+                    <p className="mt-4 text-lg font-bold text-zinc-950 dark:text-zinc-50">
                       {items.length === 0 ? 'Nothing drying' : 'No matching batches'}
                     </p>
-                    <p className="mt-1 text-sm text-zinc-500">
+                    <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                       {items.length === 0 ? 'Add a batch to start tracking.' : 'Change the filter or search.'}
                     </p>
                   </div>
