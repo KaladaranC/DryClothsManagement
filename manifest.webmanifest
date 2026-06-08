@@ -1,0 +1,32 @@
+{
+  "name": "Laundry Drying Manager",
+  "short_name": "DryCloths",
+  "description": "Track laundry batches, drying progress, and ready-to-take clothes.",
+  "start_url": "/DryClothsManagement/",
+  "scope": "/DryClothsManagement/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f7fb",
+  "theme_color": "#0e7490",
+  "categories": ["productivity", "utilities", "lifestyle"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
